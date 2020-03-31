@@ -171,6 +171,37 @@ class _FirstScreenState extends State<FirstScreen> {
                   ),
                 ),
               ),
+                            SizedBox(height: 10),
+
+              Center(
+                child: Card(
+                  margin: EdgeInsets.all(20),
+                  elevation: 10,
+                  color: Colors.blue[5],
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      ListTile(
+                        leading: Image.network(
+                            "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Foutbreaknewstoday.com%2Fwp-content%2Fuploads%2F2020%2F01%2Fcoronavirus.png&f=1&nofb=1",
+                            fit: BoxFit.fitWidth),
+                        title: Center(child: Text(' Covid Visualiser\n')),
+                        subtitle: Center(
+                            child: Text(
+                                'The goal of this project is to provide a simple, \n interactive way to visualize the impact of COVID-19.\n The data is from Worldometer real-time updates')),
+                      ),
+                      ButtonBar(
+                        children: <Widget>[
+                          FlatButton(
+                            child: Center(child: const Text('Learn More')),
+                           onPressed: _launchURL6,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           )),
     );
@@ -178,7 +209,7 @@ class _FirstScreenState extends State<FirstScreen> {
 }
 
 _launchURL1() async {
-  const url = 'https://flutter.dev';
+  const url = 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/technical-guidance/infection-prevention-and-control';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -187,7 +218,7 @@ _launchURL1() async {
 }
 
 _launchURL2() async {
-  const url = 'https://flutter.dev';
+  const url = 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/technical-guidance/guidance-for-schools-workplaces-institutions';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -196,7 +227,7 @@ _launchURL2() async {
 }
 
 _launchURL3() async {
-  const url = 'https://flutter.dev';
+  const url = 'https://www.who.int/health-topics/coronavirus/who-recommendations-to-reduce-risk-of-transmission-of-emerging-pathogens-from-animals-to-humans-in-live-animal-markets';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -206,7 +237,7 @@ _launchURL3() async {
 
 
 _launchURL4() async {
-  const url = 'https://flutter.dev';
+  const url = 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/technical-guidance/points-of-entry-and-mass-gatherings';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -215,10 +246,20 @@ _launchURL4() async {
 }
 
 _launchURL5() async {
-  const url = 'https://flutter.dev';
+  const url = 'https://blog.trello.com/work-from-home-guides';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
     throw 'Could not launch $url';
   }
 }
+
+_launchURL6() async {
+  const url = 'https://www.covidvisualizer.com';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
